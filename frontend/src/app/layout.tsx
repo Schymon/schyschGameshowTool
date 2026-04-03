@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ConnectivityProvider } from "@/components/ConnectivityProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={`${inter.variable} min-h-full flex flex-col font-sans antialiased`}>
-        {children}
+        <ConnectivityProvider>
+          {children}
+        </ConnectivityProvider>
       </body>
     </html>
   );
