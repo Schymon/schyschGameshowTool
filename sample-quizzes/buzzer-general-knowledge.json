@@ -1,0 +1,31 @@
+{
+  "type": "buzzer",
+  "title": "General Knowledge Quiz",
+  "questions": [
+    {
+      "question": "What is the capital of Germany?",
+      "answers": ["Berlin", "Munich", "Hamburg", "Frankfurt"],
+      "correctIndex": 0
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answers": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correctIndex": 1
+    },
+    {
+      "question": "What year did World War II end?",
+      "answers": ["1943", "1944", "1945", "1946"],
+      "correctIndex": 2
+    },
+    {
+      "question": "What is the largest mammal in the world?",
+      "answers": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answers": ["Michelangelo", "Raphael", "Leonardo da Vinci", "Donatello"],
+      "correctIndex": 2
+    }
+  ]
+}

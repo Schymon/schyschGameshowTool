@@ -1,0 +1,56 @@
+{
+  "type": "matrix",
+  "title": "Jeopardy Style Quiz",
+  "categories": ["Geography", "History", "Science", "Sports"],
+  "difficulties": [100, 200, 300],
+  "questions": {
+    "Geography-100": {
+      "question": "What is the capital of France?",
+      "answer": "Paris"
+    },
+    "Geography-200": {
+      "question": "Which river is the longest in Europe?",
+      "answer": "Volga"
+    },
+    "Geography-300": {
+      "question": "What is the smallest country in the world?",
+      "answer": "Vatican City"
+    },
+    "History-100": {
+      "question": "In which year did the Berlin Wall fall?",
+      "answer": "1989"
+    },
+    "History-200": {
+      "question": "Who was the first President of the United States?",
+      "answer": "George Washington"
+    },
+    "History-300": {
+      "question": "What year did the French Revolution begin?",
+      "answer": "1789"
+    },
+    "Science-100": {
+      "question": "What is the chemical symbol for water?",
+      "answer": "H2O"
+    },
+    "Science-200": {
+      "question": "What is the largest planet in our solar system?",
+      "answer": "Jupiter"
+    },
+    "Science-300": {
+      "question": "What is the speed of light in km/s?",
+      "answer": "299,792"
+    },
+    "Sports-100": {
+      "question": "How many players are on a soccer team?",
+      "answer": "11"
+    },
+    "Sports-200": {
+      "question": "In which sport would you perform a slam dunk?",
+      "answer": "Basketball"
+    },
+    "Sports-300": {
+      "question": "How many rings are on the Olympic flag?",
+      "answer": "5"
+    }
+  }
+}

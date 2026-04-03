@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String   @id @default(cuid())
+  username String   @unique
+  password String
+  role     Role     @default(USER)
+  quizzes  Quiz[]
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model RegistrationToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  used      Boolean  @default(false)
+  usedBy    String?
+  createdAt DateTime @default(now())
+}
+
+model Quiz {
+  id        String   @id @default(cuid())
+  type      String
+  title     String
+  data      Json
+  creatorId String
+  creator   User     @relation(fields: [creatorId], references: [id])
+  createdAt DateTime @default(now())
+}
