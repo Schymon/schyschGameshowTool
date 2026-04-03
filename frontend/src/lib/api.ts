@@ -1,15 +1,38 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
+function getUserId(): string | undefined {
+  if (typeof window === 'undefined') return undefined;
+  try {
+    const stored = localStorage.getItem('auth-storage');
+    if (!stored) return undefined;
+    const parsed = JSON.parse(stored);
+    return parsed.state?.user?.id;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function apiFetch<T>(
   endpoint: string,
   options?: RequestInit
 ): Promise<T> {
+  const userId = getUserId();
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  
+  if (userId) {
+    headers['x-user-id'] = userId;
+  }
+  
+  if (options?.headers) {
+    const optHeaders = options.headers as Record<string, string>;
+    Object.assign(headers, optHeaders);
+  }
+
   const response = await fetch(`${API_URL}${endpoint}`, {
     ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
+    headers,
     credentials: 'include',
   });
 
